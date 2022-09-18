@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-detect-root-devices",
+  "name": "cordova-plugin-androidx",
   "version": "1.0.0",
-  "description": "This is cordova plugin to detect root devices",
+  "description": "This is cordova plugin",
   "cordova": {
-    "id": "cordova-plugin-detect-root-devices",
+    "id": "cordova-plugin-androidx",
     "platforms": [
       "android"
     ]

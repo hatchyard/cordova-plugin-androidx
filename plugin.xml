@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-detect-root-devices" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>DetectRootDevices</name>
-    <js-module name="DetectRootDevices" src="www/detectRootDevices.js">
-        <clobbers target="detectRoot" />
+<plugin id="cordova-plugin-androidx" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AndroidX</name>
+    <js-module name="AndroidX" src="www/androidx.js">
+        <clobbers target="androidx" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="DetectRootDevices">
-                <param name="android-package" value="com.example.root.DetectRootDevices" />
+            <feature name="AndroidX">
+                <param name="android-package" value="com.ex.androidx.AndroidX" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="src/android/DetectRootDevices.java" target-dir="src/com/example/root/DetectRootDevices" />
+        <source-file src="src/android/AndroidX.java" target-dir="src/com/ex/androidx/AndroidX" />
         <framework src="src/build-extras.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>

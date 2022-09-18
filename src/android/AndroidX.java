@@ -1,4 +1,4 @@
-package com.example.root;
+package com.ex.androidx;
 
 import android.app.Activity;
 import android.util.Base64;
@@ -27,14 +27,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.SecureRandom;
 
-public class DetectRootDevices extends CordovaPlugin {
+public class AndroidX extends CordovaPlugin {
     public static final String STATUS_FIELD = "status";
     public static final String STATUS_SUCCESS = "success";
     public static final String STATUS_FAILURE = "failure";
     public static final String STATUS_ERROR = "error";
     public static final String RESPONSE_FIELD = "data";
 
-    private final String ATTEST_ACTION = "attest";
+    private final String ATTEST_ACTION = "start";
     private final Random mRandom = new SecureRandom();
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -43,11 +43,11 @@ public class DetectRootDevices extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (checkGooglePlayServicesAvailability().equals(STATUS_SUCCESS) && action.equals(ATTEST_ACTION)) {
-            String nonceData = "detect-root-devices : " + System.currentTimeMillis();
+            String nonceData = "androidx support : " + System.currentTimeMillis();
             byte[] nonce = getRequestNonce(nonceData);
             final String API_KEY = args.getString(0);
 
-            this.handleAttestRequest(nonce, API_KEY, DetectRootDevices.this.cordova.getActivity(), callbackContext);
+            this.handleAttestRequest(nonce, API_KEY, AndroidX.this.cordova.getActivity(), callbackContext);
         } else {
             callbackContext.error("Play Services not supported");
         }
