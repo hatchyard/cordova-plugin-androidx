@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-androidx",
+  "name": "cordova-plugin-androidx2",
   "version": "1.0.0",
   "description": "This is cordova plugin",
   "cordova": {
-    "id": "cordova-plugin-androidx",
+    "id": "cordova-plugin-androidx2",
     "platforms": [
       "android"
     ]
